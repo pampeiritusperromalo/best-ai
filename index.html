@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Matchmaker | Cercador d'eines d'IA</title>
+    <meta
+      name="description"
+      content="Cercador d'eines d'IA per trobar la millor opcio gratis o de pagament segons el que vols fer."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-label="Cercador d'eines d'IA">
+        <div class="hero__media" aria-hidden="true"></div>
+        <div class="hero__overlay"></div>
+
+        <nav class="topbar" aria-label="Capcalera">
+          <a class="brand" href="#" aria-label="AI Matchmaker">
+            <span class="brand__mark">AI</span>
+            <span>
+              <strong>AI Matchmaker</strong>
+              <small>Cercador d'eines d'IA</small>
+            </span>
+          </a>
+          <div class="topbar__meta">
+            <span>Actualitzat 21/05/2026</span>
+            <span id="toolCount">Eines comparades</span>
+          </div>
+        </nav>
+
+        <div class="hero__content">
+          <div class="hero__copy">
+            <p class="eyebrow">Radar professional i general</p>
+            <h1>Busca què vols fer i troba la IA que val més la pena.</h1>
+            <p class="hero__lead">
+              Un cercador pràctic per a programació, coneixement, música, vídeo, recerca, disseny,
+              presentacions, oficina, automatització i creació de contingut.
+            </p>
+
+            <form id="searchForm" class="search-box">
+              <label class="visually-hidden" for="searchInput">Cerca una tasca</label>
+              <input
+                id="searchInput"
+                type="search"
+                autocomplete="off"
+                placeholder="Ex: programar una app, crear música, buscar fonts, fer vídeos, dissenyar presentacions..."
+              />
+              <button type="submit">Cercar</button>
+            </form>
+
+            <div class="hero__actions" aria-label="Cerques rapides">
+              <button class="prompt-chip" data-query="programar">Programació</button>
+              <button class="prompt-chip" data-query="organitzar coneixement">Coneixement</button>
+              <button class="prompt-chip" data-query="crear música">Música</button>
+              <button class="prompt-chip" data-query="crear vídeos">Vídeo</button>
+              <button class="prompt-chip" data-query="buscar informació amb fonts">Recerca</button>
+              <button class="prompt-chip" data-query="disseny i presentacions">Disseny</button>
+            </div>
+          </div>
+
+          <aside class="signal-board" aria-label="Resum del cercador">
+            <div>
+              <span class="signal-board__label">Mode</span>
+              <strong>Sense xat</strong>
+            </div>
+            <div>
+              <span class="signal-board__label">Resultats</span>
+              <strong id="matchCount">Categories principals</strong>
+            </div>
+            <div>
+              <span class="signal-board__label">Comparació</span>
+              <strong>Gratis + Pro + Alternatives</strong>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="finder" aria-label="Resultats del cercador">
+        <aside class="filter-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Tipus d'ús</p>
+              <h2>Filtres</h2>
+            </div>
+            <button id="clearSearch" class="icon-button" type="button" title="Neteja la cerca" aria-label="Neteja la cerca">
+              ↻
+            </button>
+          </div>
+          <div id="categoryTabs" class="category-tabs" aria-label="Categories"></div>
+        </aside>
+
+        <section class="results-panel">
+          <header class="panel-header">
+            <div>
+              <p class="eyebrow">Recomanacions</p>
+              <h2 id="resultsTitle">Les millors IAs per començar</h2>
+            </div>
+            <span id="confidence" class="confidence">Guia general</span>
+          </header>
+          <div id="resultStack" class="result-stack"></div>
+        </section>
+      </section>
+
+      <section class="tool-lab" aria-label="Radar d'eines">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Radar complet</p>
+            <h2>Totes les eines del catàleg</h2>
+          </div>
+          <span id="catalogStatus" class="confidence">Tot</span>
+        </div>
+        <div id="toolGrid" class="tool-grid"></div>
+      </section>
+
+      <section class="source-strip" aria-label="Fonts consultades">
+        <div>
+          <p class="eyebrow">Fonts</p>
+          <h2>Base de la comparativa</h2>
+        </div>
+        <p>
+          He combinat la informació que has aportat amb fonts oficials i documentació de plans quan ha estat possible.
+          Els preus i límits poden canviar: per decidir una compra, comprova sempre la pàgina oficial.
+        </p>
+        <div id="sourceLinks" class="source-links"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
